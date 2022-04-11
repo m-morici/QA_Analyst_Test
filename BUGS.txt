@@ -1,0 +1,40 @@
+ID: BUG_01
+Title: There is no limit for buying or selling items
+
+Summary: There is no character limit for selling items. The user is able to sell more items than what he actually has on the portfolio.
+
+Steps:
+- Access to https://glacial-reef-23457.herokuapp.com/ > Select any option from 'Mis inversiones' list
+- Add '100000000000000000000000000000000000000000000000' to 'Vender' field > Click 'Realizar Venta'
+- Check 'Mis Inversiones' > 'Caja de ahorro' 
+
+Result: There is no character nor amount limits when selling items. The user is able to sell more items than what he actually has on the portfolio. Hence, 'Caja de ahorro' amount shows a negative and exponential number ($ -1,2625e+47 in this case) or it keeps on loading indefinitely   
+
+Expected: User shouldn't be able to sell more items than the ones on his portfolio.
+
+Notes:
+- This also happens when buying items, but huge number is displayed under 'Mi Portfolio'
+- Screenshot_bug01_buy.png
+
+Build: Test vX.XXX
+
+--------------------------------------------------------------------------------------------------------
+ID: BUG_02
+Title: 'Valor Total Cartera' graphic does not reflect the actual amount of actions/bonuses on the portfolio.
+
+Summary: After buying actions or bonuses, the graphic is updated, but its propotions are incorrect.
+
+Steps:
+- Access to https://glacial-reef-23457.herokuapp.com/ > Check the amount of actions/bonuses on 'Mi Portfolio'
+- Buy some so as to have the same quantity of each of the items on the portfolio (i.e 20 Ternium, 20 Aluar, 20 Bocan)
+- Check the graphic at 'Valor total cartera' section
+
+Result: The graphic is updated but it is incorrect. It does not show the actuall proportion of items on the portfolio.   
+
+Expected: The graphic is updated and shows the actual proportion of the portfolio items.
+
+Notes:
+- Screenshot_bug02.png
+
+Build: Test vX.XXX
+
