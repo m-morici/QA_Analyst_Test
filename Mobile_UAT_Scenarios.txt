@@ -1,0 +1,27 @@
+Scenario: User is able to turn on/off the devices manually
+	Given I have logged in and I am in the home screen, I should see my devices
+	Then I click one of them and I'm redirected to the device settings
+	Scroll down to set the CCT Presets and select any of the five options
+	And I tap the 'On/Off' button below the Device Name to turn on the light
+	And I tap the 'On/Off' button again to turn off the device
+
+Scenario: Check that the user can schedulle the devices to turn on/off automatically
+	Given I have logged in and I am in the home screen, I should see my devices
+	Then I click one of them and I'm redirected to the device settings
+	And scroll down the screen up to 'Other Settings' section, tap the 'Schedules' option 
+	To schedule a new time, tap 'New Schedule'
+	And set a time range by taping the start time on the circle and swiping the finger down to the end time - i.e from 1 to 5 - 
+	Then 'On/Off' button by tapping it 
+	And set which day or days this schedule takes place by taping the days of the week at the bottom of the screen
+	Then tap 'Save' at the top right corner of the screen
+	Tap 'Back' arrow until reach the home screen again
+	And check that the little text below the device name says 'Scheduled'
+
+Scenario: User should be able to tell if a device is on or off from the home screen
+	Given I have logged in and I am in the home screen, I should see my devices
+	Then I click one of them and I'm redirected to the device settings
+	Scroll down to set the CCT Presets and select any of the five options
+	And tap the 'On/Off' button below the Device Name to turn on the light
+	Then tap 'Back' arrow at the top left of the screen
+	While on the home page, the device name is highlighted and the DIM percentage is displayed over the device profile photo
+	Repeat the same steps to turn the device off, go back to the home screen and check that the device is now grayed out, and no DIM percentage is displayed.
