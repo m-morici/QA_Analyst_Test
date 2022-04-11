@@ -1,0 +1,12 @@
+Title: Consider implementing a 'Vender Todos' option.
+
+As a User, I want to be able to have the option to sell all my actions/bonus so that I don't have to input the amount manually.
+
+AC: 
+- A 'Vender total' checkbox is displayed next to 'Vender' field
+- If 'Vender total' checkbox is selected 'Realizar Venta' button is displayed.
+- If 'Vender total' checkbox is selected and the user clicks 'Realizar Venta' button, all the action/bonuses of that type are sell
+- After selling all the action/bonuses of that type, 'Mi Portfolio' section is displayed accordingly, and the action/bonus type is not displayed anymore.
+
+
+
