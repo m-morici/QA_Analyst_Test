@@ -16,5 +16,6 @@ I would recomment to run the following as Smoke test for this site
 -- TC03 & 03-A (Sell Actions)
 -- TC06 & 06-A (Sell Bonos)
 
-## Postman Excercise
-Workspace ID 986bc53d-b0c5-4603-82f4-f5e960988dae
+## Postman Exercise
+Since I'm not used to it, I exported a version of what I've done and added to this repo, but also I'm adding the Workspace ID here in case you want to search it and access it from Postman itself.
+- Postman Workspace ID 986bc53d-b0c5-4603-82f4-f5e960988dae
