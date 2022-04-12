@@ -15,3 +15,6 @@ I would recomment to run the following as Smoke test for this site
 -- TC02 (Invalid Characters)
 -- TC03 & 03-A (Sell Actions)
 -- TC06 & 06-A (Sell Bonos)
+
+## Postman Excercise
+Workspace ID 986bc53d-b0c5-4603-82f4-f5e960988dae
