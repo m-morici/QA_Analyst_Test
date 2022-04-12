@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "14046acd-d07a-41c7-8478-d7585271401c",
+		"name": "Test_Maite",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buy_Actions",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"itemId\":\"a2\",\"amount\":10}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://glacial-reef-23457.herokuapp.com/api/buy",
+					"protocol": "https",
+					"host": [
+						"glacial-reef-23457",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"buy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Portfolio",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is not 500\", function () {\r",
+							"    pm.response.to.not.have.status(500);\r",
+							"});\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://glacial-reef-23457.herokuapp.com/api/user-portfolio",
+					"protocol": "https",
+					"host": [
+						"glacial-reef-23457",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"user-portfolio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Available_Investments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Ternium is present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a1\";\r",
+							"    var referenceName = \"Ternium Argentina\";\r",
+							"    var referenceType = \"stock\";\r",
+							"\r",
+							"    pm.expect(jsonData[0]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[0].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[0].type).to.eql(referenceType);\r",
+							"\r",
+							"});\r",
+							"pm.test(\"Transportadora Gas del Norte is present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a2\";\r",
+							"    var referenceName = \"Transportadora Gas del Norte\";\r",
+							"    var referenceType = \"stock\";\r",
+							"\r",
+							"    pm.expect(jsonData[1]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[1].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[1].type).to.eql(referenceType);\r",
+							"\r",
+							"});\r",
+							"pm.test(\"Aluar is present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a3\";\r",
+							"    var referenceName = \"Aluar\";\r",
+							"    var referenceType = \"stock\";\r",
+							"\r",
+							"    pm.expect(jsonData[2]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[2].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[2].type).to.eql(referenceType);\r",
+							"});\r",
+							"pm.test(\"BOCAN 2022 is present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a4\";\r",
+							"    var referenceName = \"BOCAN 2022\";\r",
+							"    var referenceType = \"bond\";\r",
+							"\r",
+							"    pm.expect(jsonData[3]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[3].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[3].type).to.eql(referenceType);\r",
+							"});\r",
+							"pm.test(\"ARGENTINA 7 75 2022 is present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a5\";\r",
+							"    var referenceName = \"ARGENTINA 7 75 2022\";\r",
+							"    var referenceType = \"bond\";\r",
+							"\r",
+							"    pm.expect(jsonData[4]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[4].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[4].type).to.eql(referenceType);\r",
+							"});\r",
+							"pm.test(\"REPÚBLICA ARGENTINA 3 375 2023 is present\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a6\";\r",
+							"    var referenceName = \"REPÚBLICA ARGENTINA 3 375 2023\";\r",
+							"    var referenceType = \"bond\";\r",
+							"\r",
+							"    pm.expect(jsonData[5]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[5].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[5].type).to.eql(referenceType);\r",
+							"});\r",
+							"pm.test(\"BONO REPUBLICA ARGENTINA LEY LOCAL 2038 is present\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a7\";\r",
+							"    var referenceName = \"BONO REPÚBLICA ARGENTINA LEY LOCAL 2038\";\r",
+							"    var referenceType = \"bond\"\r",
+							"\r",
+							"    pm.expect(jsonData[6]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[6].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[6].type).to.eql(referenceType);\r",
+							"});\r",
+							"pm.test(\"BONO REPÚBLICA ARGENTINA LEY LOCAL 2029 IN is present\", function() {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var referenceId = \"a8\";\r",
+							"    var referenceName = \"BONO REPÚBLICA ARGENTINA LEY LOCAL 2029 IN...\";\r",
+							"    var referenceType = \"bond\";\r",
+							"\r",
+							"    pm.expect(jsonData[7]._id).to.eql(referenceId);\r",
+							"    pm.expect(jsonData[7].name).to.eql(referenceName);\r",
+							"    pm.expect(jsonData[7].type).to.eql(referenceType);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://glacial-reef-23457.herokuapp.com/api/available-investments",
+					"protocol": "https",
+					"host": [
+						"glacial-reef-23457",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"available-investments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
